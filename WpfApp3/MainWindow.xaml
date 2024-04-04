@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="275*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="91*"/>
+                <ColumnDefinition Width="69*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="Folder_Go" Content="Открыть папку с музыкой" Background="Black" Foreground="White" FontSize="20" Click="Folder_Go_Click"></Button>
+            <Button Grid.Column="1" x:Name="Folder_History" Content="История прослушиваний" Background="Black" Foreground="White" FontSize="20"></Button>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="18*"/>
+                <ColumnDefinition Width="18*"/>
+                <ColumnDefinition Width="18*"/>
+                <ColumnDefinition Width="18*"/>
+                <ColumnDefinition Width="18*"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+            <MediaElement x:Name="mediaElement" LoadedBehavior="Manual" MediaOpened="media_MediaOpened"/>
+            <Button Grid.Column="0" x:Name="back" Content="Назад" Background="Black" Foreground="White" FontSize="23" Click="back_Click"></Button>
+            <Button Grid.Column="1" x:Name="pause" Content="Пауза" Background="Black" Foreground="White" FontSize="23" Click="pause_Click"></Button>
+            <Button Grid.Column="2" x:Name="forward" Content="Вперёд" Background="Black" Foreground="White" FontSize="23" Click="forward_Click"></Button>
+            <Button Grid.Column="3" x:Name="repeat" Content="Повтор" Background="Black" Foreground="White" FontSize="23" Click="repeat_Click"></Button>
+            <Button Grid.Column="4" x:Name="shuffle" Content="Случайно" Background="Black" Foreground="White" FontSize="23" Click="shuffle_Click"></Button>
+            <Slider Grid.Column="5" x:Name="audio" ValueChanged="audio_ValueChanged" />
+        </Grid>
+        <Grid Grid.Row="2"> 
+            <Slider x:Name="time" ValueChanged="time_ValueChanged" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <ListBox x:Name="music">
+                <Separator/>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Window>
